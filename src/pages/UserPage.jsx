@@ -14,7 +14,7 @@ const UserPage = () => {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        axios.get(`https://threads-backend-tp0d.onrender.com/api/users/profile/${username}`)
+        axios.get(`https://threads-backend-tp0d.onrender.com/api/users/profile/${username}`, { withCredentials: true })
             .then(response => response.data)
             .then(result => {
                 setUserProfile(result)
