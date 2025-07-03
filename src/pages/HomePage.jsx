@@ -42,7 +42,7 @@ const HomePage = () => {
         if (currentTimeout) clearTimeout(currentTimeout);
 
         const previousTimeout = setTimeout(async () => {
-            const response = await axios.get(`https://threads-backend-tp0d.onrender.com/api/users/all?filter=${e.target.value}`);
+            const response = await axios.get(`https://threads-backend-tp0d.onrender.com/api/users/all?filter=${e.target.value}`, { withCredentials: true });
             const result = await response.data;
             setSearchResults(result);
         }, 100);
