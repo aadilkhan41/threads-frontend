@@ -23,7 +23,7 @@ const ReplyModal = ({ post, userProfile, isOpen, onClose, setPostDetails }) => {
     const handleReplyToPost = async () => {
         try {
             setIsLoading(true);
-            const response = await axios.put(`/api/posts/reply/${post._id}`, { text }, { withCredentials: true });
+            const response = await axios.put(`https://threads-backend-tp0d.onrender.com/api/posts/reply/${post._id}`, { text }, { withCredentials: true });
             const result = await response.data;
             if (setPostDetails) {
                 // concating the new reply to current replies

@@ -11,7 +11,7 @@ const PostPage = () => {
     const toast = useToast();
 
     useEffect(() => {
-        axios.get(`/api/posts/${pid}`)
+        axios.get(`https://threads-backend-tp0d.onrender.com/api/posts/${pid}`)
             .then(response => response.data)
             .then(result => setPostDetails(result))
             .catch(error => {

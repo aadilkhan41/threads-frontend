@@ -18,12 +18,4 @@ export default defineConfig({
             },
         },
     },
-    server: {
-        proxy: {
-            "/api": {
-                target: "https://threads-backend-tp0d.onrender.com/",
-                changeOrigin: true,
-            },
-        },
-    },
 });

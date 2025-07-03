@@ -20,7 +20,7 @@ const Like = ({ post }) => {
 
     const handleLikePost = async () => {
         try {
-            const response = await axios.put(`/api/posts/like/${post?._id}`, null, { withCredentials: true });
+            const response = await axios.put(`https://threads-backend-tp0d.onrender.com/api/posts/like/${post?._id}`, null, { withCredentials: true });
             const result = await response.data;
             isLiked
                 ? setLikesLength(prevLength => prevLength - 1)

@@ -3,7 +3,7 @@ import axios from "axios";
 const followUser = async (id, toast, setUserData, setLoading) => {
     try {
         setLoading(true);
-        const response = await axios.put(`/api/users/follow/${id}`, null, {withCredentials: true});
+        const response = await axios.put(`https://threads-backend-tp0d.onrender.com/api/users/follow/${id}`, null, {withCredentials: true});
         const result = await response.data;
         localStorage.setItem("user", JSON.stringify(result?.user));
         setUserData(result?.user);

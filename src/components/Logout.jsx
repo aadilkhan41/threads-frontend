@@ -9,7 +9,7 @@ const Logout = ({ mobile }) => {
 
     const handleLogout = async () => {
         try {
-            const response = await axios.post("/api/users/logout");
+            const response = await axios.post("https://threads-backend-tp0d.onrender.com/api/users/logout");
             console.log(response.data.message);
             localStorage.removeItem("user");
             setUserData(null);

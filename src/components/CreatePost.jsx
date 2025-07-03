@@ -71,7 +71,7 @@ const CreatePost = () => {
                 text: textArea,
                 img: imgUrl || ""
             };
-            const response = await axios.post("/api/posts/create", postBody, { withCredentials: true });
+            const response = await axios.post("https://threads-backend-tp0d.onrender.com/api/posts/create", postBody, { withCredentials: true });
             const result = await response.data;
             localStorage.setItem("user", JSON.stringify(result.user));
             setUserLoggedInData(result.user);

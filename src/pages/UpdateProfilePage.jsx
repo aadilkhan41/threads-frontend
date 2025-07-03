@@ -46,7 +46,7 @@ const UpdateProfilePage = () => {
         setIsLoading(true);
         try {
             const updatedObject = { ...userProfileData, profilePic: imgUrl };
-            const response = await axios.put(`/api/users/update/${user._id}`, updatedObject, { withCredentials: true });
+            const response = await axios.put(`https://threads-backend-tp0d.onrender.com/api/users/update/${user._id}`, updatedObject, { withCredentials: true });
             const result = await response.data;
             localStorage.setItem("user", JSON.stringify(result));
             setUser(result);

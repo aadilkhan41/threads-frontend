@@ -22,7 +22,7 @@ const HomePage = () => {
 
         const getFeed = async () => {
             try {
-                const response = await axios.get("/api/posts/feed");
+                const response = await axios.get("https://threads-backend-tp0d.onrender.com/api/posts/feed");
                 const feedPosts = await response.data;
                 setPosts(feedPosts);
             } catch (error) {
@@ -40,7 +40,7 @@ const HomePage = () => {
         if (currentTimeout) clearTimeout(currentTimeout);
 
         const previousTimeout = setTimeout(async () => {
-            const response = await axios.get(`/api/users/all?filter=${e.target.value}`);
+            const response = await axios.get(`https://threads-backend-tp0d.onrender.com/api/users/all?filter=${e.target.value}`);
             const result = await response.data;
             setSearchResults(result);
         }, 100);

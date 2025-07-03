@@ -4,7 +4,7 @@ const handleDeletePost = async ( postId, username, navigate, toast, setUserLogge
     try {
         if (!window.confirm("Are you sure? Do you want to delete this post?")) return;
         
-        const response = await axios.delete(`/api/posts/delete/${postId}`, {
+        const response = await axios.delete(`https://threads-backend-tp0d.onrender.com/api/posts/delete/${postId}`, {
             withCredentials: true,
         });
 
