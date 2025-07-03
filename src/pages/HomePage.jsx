@@ -22,7 +22,9 @@ const HomePage = () => {
 
         const getFeed = async () => {
             try {
-                const response = await axios.get("https://threads-backend-tp0d.onrender.com/api/posts/feed");
+                const response = await axios.get("https://threads-backend-tp0d.onrender.com/api/posts/feed", {
+                    withCredentials: true,
+                });
                 const feedPosts = await response.data;
                 setPosts(feedPosts);
             } catch (error) {

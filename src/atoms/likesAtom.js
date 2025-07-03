@@ -7,7 +7,9 @@ const likesAtomFamily = atomFamily({
         key: "likesAtomSelectorFamily",
         get: post_id => async () => {
             try{
-                const response = await axios.get(`https://threads-backend-tp0d.onrender.com/api/posts/${post_id}`);
+                const response = await axios.get(`https://threads-backend-tp0d.onrender.com/api/posts/${post_id}`, {
+                    withCredentials: true,
+                });
                 const result = await response.data;
                 return result.likes?.length;
             }
