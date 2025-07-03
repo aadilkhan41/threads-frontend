@@ -38,7 +38,7 @@ const LoginPage = () => {
         }
 
         try {
-            const response = await axios.post("https://threads-backend-tp0d.onrender.com/api/users/login", loginBody);
+            const response = await axios.post("https://threads-backend-tp0d.onrender.com/api/users/login", loginBody, { withCredentials: true });
             localStorage.setItem("user", JSON.stringify(response.data));
             setUserData(response.data);
         }
